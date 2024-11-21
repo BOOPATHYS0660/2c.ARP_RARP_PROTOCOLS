@@ -1,46 +1,44 @@
-# Ex No :3b PROGRAM FOR REVERSE ADDRESS RESOLUTION PROTOCOL(RARP) USING UDP 
+# Ex No :4a WRITE A CODE SIMULATING PING COMMAND
 ## AIM:
-To write a python program for simulating RARP protocols using UDP 
+To write the python program for simulating ping command. 
 ## ALGORITHM:
-## Client:
-1. Start the program 
-2. Using datagram sockets UDP function is established. 
-3. Get the MAC address to be converted into IP address. 
-4. Send this MAC address to server. 
-5. Server returns the IP address to client. 
-## Server:
-1. Start the program. 
-2. Server maintains the table in which IP and corresponding MAC addresses are stored. 
-3. Read the MAC address which is send by the client. 
-4. Map the IP address with its MAC address and return the IP address to client.
+Step 1: start the program. 
+Step 2: Include necessary package in java. 
+Step 3: To create a process object p to implement the ping command. 
+Step 4: declare one Buffered Reader stream class object. 
+Step 5: Get the details of the server 
+     5:1: length of the IP address. 
+     5:2: time required to get the details. 
+     5:3: send packets, receive packets and lost packets.  
+     5.4: minimum, maximum and average times. 
+Step 6: print the results.  
+Step 7: Stop the program. 
+
 ## PROGRAM:
 ### CLIENT:
 ```
- 
 import socket 
+from pythonping import ping 
 s=socket.socket() 
-s.bind(('localhost',9000)) 
+s.bind(('localhost'8000)) 
 s.listen(5) 
 c,addr=s.accept() 
-address={"6A:08:AA:C2":"192.168.1.100","8A:BC:E3:FA":"192.168.1.99"}; 
 while True: 
-            ip=c.recv(1024).decode() 
-            try: 
-                c.send(address[ip].encode()) 
-            except KeyError: 
-                c.send("Not Found".encode())    
-
+    hostname=c.recv(1024).decode() 
+    try: 
+        c.send(str(ping(hostname, verbose=False)).encode()) 
+    except KeyError: 
+        c.send("Not Found".encode()) 
 ```
 ### SERVER:
 ```
 import socket 
 s=socket.socket() 
-s.connect(('localhost',9000)) 
+s.connect(('localhost',8000)) 
 while True: 
-    ip=input("Enter MAC Address : ") 
+    ip=input("Enter the website you want to ping ") 
     s.send(ip.encode()) 
-    print("Logical Address",s.recv(1024).decode()) 
-
+    print(s.recv(1024).decode()) 
 ```
 ## OUTPUT:
 ### CLIENT:
@@ -54,4 +52,4 @@ while True:
 
 
 ## RESULT:
-Thus, python program for simulating RARP protocols using UDP was successfully executed. 
+Thus, the python program for simulating ping command was successfully executed. 
