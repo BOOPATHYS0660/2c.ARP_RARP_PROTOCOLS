@@ -43,13 +43,13 @@ while True:
 
 ```
 ## OUTPUT:
-### CLIENT 
+### CLIENT:
 ![Screenshot 2024-11-21 184952](https://github.com/user-attachments/assets/5da93ceb-c23f-452a-af9e-bc58a5781158)
 
 
-### SERVER
+### SERVER:
 ![Screenshot 2024-11-21 184935](https://github.com/user-attachments/assets/3f11a940-a0cd-4a26-ac9a-b80f1ed9220f)
 
 
-## RESULT
+## RESULT:
 Thus, python program for simulating RARP protocols using UDP was successfully executed. 
